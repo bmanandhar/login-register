@@ -1,15 +1,14 @@
-
 <!DOCTYPE html>
 <html>
     <head>
         <title>Animated Login Register Form</title>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <script type="text/javascript" src="jQuery.js"></script>
+        <script type="text/javascript" src="jquery.js"></script>
     </head>
     <body>
           <h1></h1>
           <section id="form_before_launch">
-              <p class="box_bottom">Click to enter</p>
+              <p>Click enter</p>
                   <form id="form" method="post" onsubmit="return false">
                   <div>
                       <div>
@@ -18,10 +17,14 @@
                       <div>
                           <input type="password" id="password" placeholder="password"/>
                       </div>
-                      <div id="btn">
-                          <input type="submit" id="submit" value="Login"/>
+                      <div>
+                          <button class="btn">
+                              <input type="submit" id="submit" value="Login"/>
+                          </button>
+                          <button class="btn">
+                              <input type="submit" id="submit" value="Register"/>
                       </div>
-                  </div>
+                      </div>
                   </form>
           </section>
 
@@ -31,6 +34,7 @@
         $(this).animate({height:"250px", width:"400px"});
         $(this).children("p").animate({fontSize:"25px"});
         $("#form").delay(500).fadeIn();
+        $("p").hide();
     })
     $("#submit").click(function(){
         var u_name = $("#username").val();
@@ -47,3 +51,58 @@
 
     </body>
 </html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>Animated Login Register Form</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="jquery.js"></script>
+    </head>
+    <body>
+          <h1></h1>
+          <section id="form_before_launch">
+              <p>Click enter</p>
+                  <form id="form" method="post" onsubmit="return false">
+                  <div>
+                      <div>
+                          <input type="text" id="usernmae" placeholder="username"/>
+                      </div>
+                      <div>
+                          <input type="password" id="password" placeholder="password"/>
+                      </div>
+                      <div>
+                          <button class="btn">
+                              <input type="submit" id="submit" value="Login"/>
+                          </button>
+                          <button class="btn">
+                              <input type="submit" id="submit" value="Register"/>
+                      </div>
+                      </div>
+                  </form>
+          </section>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#form_before_launch").click(function() {
+        $(this).animate({height:"250px", width:"400px"});
+        $(this).children("p").animate({fontSize:"25px"});
+        $("#form").delay(500).fadeIn();
+        $("p").hide();
+    })
+    $("#submit").click(function(){
+        var u_name = $("#username").val();
+        var pass = $("#password").val();
+        if (u_name != "" && pass != "") {
+            $("#form_before_launch").fadeOut();
+            $("h1").fadeIn();
+            $("h1").html("Welcome " + u_name);
+            $("h1").animate({marginTop:"200px"});
+        };
+    })
+})
+</script>
+
+    </body>
+</html> -->
